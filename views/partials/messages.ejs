@@ -1,0 +1,29 @@
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"> </script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.2/js/toastr.min.js"> </script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet"/>
+
+
+<% if(typeof errors != 'undefined'){ %> <% errors.forEach(function(error) { %>
+     <script>toastr.options.fadeOut = 4000; toastr.warning('<%=error.msg%>') </script>
+
+<% }); %> <% } %>
+
+<% if(success_msg != ''){ %>
+    
+     <script>toastr.options.fadeOut = 4000;
+            toastr.success('<%=success_msg%>') </script>
+
+<% } %>
+
+<% if(error_msg != ''){ %>
+
+     <script>toastr.options.fadeOut = 4000;
+toastr.error('<%=error_msg%>') </script>
+
+<% } %>
+
+<% if(error != ''){ %>
+     <script>toastr.options.fadeOut = 4000;
+toastr.error('<%=error%>') </script>
+
+<% } %>
